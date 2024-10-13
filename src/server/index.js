@@ -11,6 +11,7 @@ app.get("/", function (_, res) {
   const pathToHtmlFile = path.resolve(__dirname, "dist/index.html");
   res.sendFile(pathToHtmlFile);
 });
+
 app.post("/api", async function (req, res) {
   const formText = req.body.url;
   if (!formText) {
@@ -31,6 +32,13 @@ app.post("/api", async function (req, res) {
         },
       }
     );
+        console.log("TextRazor Response:", response.data);
+
+    const topics = response.data.response.topics;
+    if (!topics || topics.length === 0) {
+      console.warn("No topics found in the response.");
+    }
+
     res.json({
       message: "Data received successfully",
       results: response.data,
@@ -40,6 +48,7 @@ app.post("/api", async function (req, res) {
     res.status(500).json({ error: "Error processing request" });
   }
 });
+
 
 app.listen(9000, () => {
   console.log(`Server is running on http://localhost:9000`);
