@@ -1,7 +1,6 @@
 # Weather Journal App
 A web application that allows users to submit a URL, which is then processed using the TextRazor API to extract language and reliability information.
 ## Table of Contents
-Technologies
 - [Technologies](#technologies)
 - [Project](#project)
 
