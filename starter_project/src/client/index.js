@@ -1,9 +1,8 @@
 // js files
 import { handleSubmit } from './js/formHandler'
-
-
-
-// alert("I EXIST")
-// console.log("CHANGE!!");
-
 // sass files
+import "../client/styles/resets.scss";
+import "../client/styles/base.scss";
+import "../client/styles/footer.scss";
+import "../client/styles/form.scss";
+import "../client/styles/header.scss";
